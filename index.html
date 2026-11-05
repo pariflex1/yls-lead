@@ -230,18 +230,32 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
 #r9:checked ~ .deck #p9 .glow,
 #r10:checked ~ .deck #p10 .glow,
 #r11:checked ~ .deck #p11 .glow{animation-play-state:running}
-#r0:checked ~ .deck .bars span:nth-child(-n+1) i{width:100%}
-#r1:checked ~ .deck .bars span:nth-child(-n+2) i{width:100%}
-#r2:checked ~ .deck .bars span:nth-child(-n+3) i{width:100%}
-#r3:checked ~ .deck .bars span:nth-child(-n+4) i{width:100%}
-#r4:checked ~ .deck .bars span:nth-child(-n+5) i{width:100%}
-#r5:checked ~ .deck .bars span:nth-child(-n+6) i{width:100%}
-#r6:checked ~ .deck .bars span:nth-child(-n+7) i{width:100%}
-#r7:checked ~ .deck .bars span:nth-child(-n+8) i{width:100%}
-#r8:checked ~ .deck .bars span:nth-child(-n+9) i{width:100%}
-#r9:checked ~ .deck .bars span:nth-child(-n+10) i{width:100%}
-#r10:checked ~ .deck .bars span:nth-child(-n+11) i{width:100%}
+#r0:checked ~ .deck .bars span:nth-child(1) i{animation:barfill 4.5s linear forwards}
+#r1:checked ~ .deck .bars span:nth-child(-n+1) i{width:100%}
+#r1:checked ~ .deck .bars span:nth-child(2) i{animation:barfill 5.5s linear forwards}
+#r2:checked ~ .deck .bars span:nth-child(-n+2) i{width:100%}
+#r2:checked ~ .deck .bars span:nth-child(3) i{animation:barfill 7s linear forwards}
+#r3:checked ~ .deck .bars span:nth-child(-n+3) i{width:100%}
+#r3:checked ~ .deck .bars span:nth-child(4) i{animation:barfill 7s linear forwards}
+#r4:checked ~ .deck .bars span:nth-child(-n+4) i{width:100%}
+#r4:checked ~ .deck .bars span:nth-child(5) i{animation:barfill 7s linear forwards}
+#r5:checked ~ .deck .bars span:nth-child(-n+5) i{width:100%}
+#r5:checked ~ .deck .bars span:nth-child(6) i{animation:barfill 7s linear forwards}
+#r6:checked ~ .deck .bars span:nth-child(-n+6) i{width:100%}
+#r6:checked ~ .deck .bars span:nth-child(7) i{animation:barfill 6s linear forwards}
+#r7:checked ~ .deck .bars span:nth-child(-n+7) i{width:100%}
+#r7:checked ~ .deck .bars span:nth-child(8) i{animation:barfill 6s linear forwards}
+#r8:checked ~ .deck .bars span:nth-child(-n+8) i{width:100%}
+#r8:checked ~ .deck .bars span:nth-child(9) i{animation:barfill 6.5s linear forwards}
+#r9:checked ~ .deck .bars span:nth-child(-n+9) i{width:100%}
+#r9:checked ~ .deck .bars span:nth-child(10) i{animation:barfill 8s linear forwards}
+#r10:checked ~ .deck .bars span:nth-child(-n+10) i{width:100%}
+#r10:checked ~ .deck .bars span:nth-child(11) i{animation:barfill 7s linear forwards}
+#r11:checked ~ .deck .bars span:nth-child(-n+11) i{width:100%}
 #r11:checked ~ .deck .bars span:nth-child(-n+12) i{width:100%}
+@keyframes barfill{from{width:0}to{width:100%}}
+.deck.hold .bars span i,.deck.lbopen .bars span i,.deck.away .bars span i{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){#r0:checked ~ .deck .bars span:nth-child(-n+1) i{width:100%}#r1:checked ~ .deck .bars span:nth-child(-n+2) i{width:100%}#r2:checked ~ .deck .bars span:nth-child(-n+3) i{width:100%}#r3:checked ~ .deck .bars span:nth-child(-n+4) i{width:100%}#r4:checked ~ .deck .bars span:nth-child(-n+5) i{width:100%}#r5:checked ~ .deck .bars span:nth-child(-n+6) i{width:100%}#r6:checked ~ .deck .bars span:nth-child(-n+7) i{width:100%}#r7:checked ~ .deck .bars span:nth-child(-n+8) i{width:100%}#r8:checked ~ .deck .bars span:nth-child(-n+9) i{width:100%}#r9:checked ~ .deck .bars span:nth-child(-n+10) i{width:100%}#r10:checked ~ .deck .bars span:nth-child(-n+11) i{width:100%}#r11:checked ~ .deck .bars span:nth-child(-n+12) i{width:100%}}
 #r0:checked ~ .deck .bars span,
 #r1:checked ~ .deck .bars span,
 #r2:checked ~ .deck .bars span,
@@ -277,7 +291,7 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
 <input class="pg" type="radio" name="pg" id="r9" aria-label="Slide 10">
 <input class="pg" type="radio" name="pg" id="r10" aria-label="Slide 11">
 <input class="pg" type="radio" name="pg" id="r11" aria-label="Slide 12">
-<main class="deck" id="deck" aria-label="YLS Dreams – Premium Villas and Residential Plots in Jhansi">
+<main class="deck away" id="deck" aria-label="YLS Dreams – Premium Villas and Residential Plots in Jhansi">
   <div class="bars" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
   <button class="snd paused" id="snd" type="button" aria-label="Play music" aria-pressed="false"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.6" height="12" rx="1"/><rect x="8.4" y="1" width="3.6" height="12" rx="1"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.2v11.6L12.6 7z"/></svg></button>
   <audio id="bgm" loop preload="none" playsinline src="https://raw.githubusercontent.com/pariflex1/yls-lead/refs/heads/main/sound.mp3"></audio>
@@ -439,9 +453,9 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
       el.src = el.getAttribute('data-src'); el.removeAttribute('data-src');
     });
   }
-  function loadNear(n) { for (var k = n; k <= n + 2 && k < radios.length; k++) loadSlide(k); }
+  function loadNear(n) { for (var k = n; k <= n + 3 && k < radios.length; k++) loadSlide(k); }
 
-  function onPage(n) { loadNear(n); }
+  function onPage(n) { loadNear(n); deck.classList.remove('away'); }
   function go(n) {
     safe(function () {
       n = Math.max(0, Math.min(radios.length - 1, n));
@@ -469,13 +483,39 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
     });
   });
 
+  /* autoplay: the top bar fills over each slide's time, and its end moves to the next slide */
+  safe(function () {
+    var bars = deck.querySelector('.bars');
+    deck.addEventListener('animationend', function (e) {
+      if (e.animationName !== 'barfill') return;
+      var seg = e.target.parentNode;
+      if (Array.prototype.indexOf.call(bars.children, seg) === cur()) go(cur() + 1);
+    });
+    /* hold a finger (or the mouse) on the screen to pause */
+    function hold() { deck.classList.add('hold'); }
+    function release() { deck.classList.remove('hold'); }
+    deck.addEventListener('touchstart', hold, { passive: true });
+    deck.addEventListener('touchend', release, { passive: true });
+    deck.addEventListener('touchcancel', release, { passive: true });
+    deck.addEventListener('mousedown', hold);
+    document.addEventListener('mouseup', release);
+    /* wait for the first photo before the clock starts */
+    var first = deck.querySelector('#p0 .bg'), started = false;
+    function begin() { if (started) return; started = true; deck.classList.remove('away'); }
+    if (first && !first.complete) { first.addEventListener('load', begin); first.addEventListener('error', begin); setTimeout(begin, 4000); } else begin();
+    /* pause while the tab is hidden or the visitor is using the map */
+    document.addEventListener('visibilitychange', function () { if (document.hidden) deck.classList.add('away'); else deck.classList.remove('away'); });
+    window.addEventListener('blur', function () { setTimeout(function () { if (document.activeElement && document.activeElement.tagName === 'IFRAME') deck.classList.add('away'); }, 0); });
+    window.addEventListener('focus', function () { deck.classList.remove('away'); });
+  });
+
   /* click-to-zoom viewer */
   safe(function () {
     function openLb(img) {
       lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt || '';
-      lb.classList.remove('zoomed'); lb.classList.add('open'); lb.scrollTo(0, 0); lbClose.focus();
+      lb.classList.remove('zoomed'); lb.classList.add('open'); deck.classList.add('lbopen'); lb.scrollTo(0, 0); lbClose.focus();
     }
-    function closeLb() { lb.classList.remove('open', 'zoomed'); lbImg.removeAttribute('src'); }
+    function closeLb() { lb.classList.remove('open', 'zoomed'); deck.classList.remove('lbopen'); lbImg.removeAttribute('src'); }
     Array.prototype.forEach.call(document.querySelectorAll('.zoomable'), function (img) {
       img.tabIndex = 0; img.setAttribute('role', 'button');
       img.addEventListener('click', function () { openLb(img); });
