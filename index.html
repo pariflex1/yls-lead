@@ -143,15 +143,18 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
 .pg:focus-visible~.deck{outline:2px solid var(--gold-l);outline-offset:-2px}
 
 /* slide colour worlds */
-.s-cover{background:#15110e;color:#fff;justify-content:flex-end;padding-bottom:88px}
 .scene>.bg{position:absolute;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block}
-.s-welcome{background:#0b0d12;color:#fff;justify-content:flex-end;padding-bottom:88px}
-.s-welcome::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 45%,rgba(0,0,0,.78) 100%)}
-.welcome{font-size:var(--fs-2);font-weight:var(--fw-1);letter-spacing:.14em;text-transform:uppercase;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.7);margin-bottom:-4px}
-.logo{width:min(46vw,180px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.6))}
-.s-cover::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.4) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,.1) 42%,rgba(0,0,0,.85) 100%)}
-.s-cover h1{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45)}
-.s-cover .hl{background:rgba(255,255,255,.16);color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.s-welcome{background:#0b0d12;color:#fff;justify-content:space-between;padding:50px 24px 88px}
+.s-welcome .night{opacity:0;animation:nightIn 2s ease 3s forwards}
+@keyframes nightIn{to{opacity:1}}
+.s-welcome::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,0) 40%,rgba(0,0,0,.86) 100%)}
+.wtop{display:flex;flex-direction:column;align-items:center;gap:6px}
+.wbot{display:flex;flex-direction:column;align-items:center;gap:12px}
+.s-welcome h1{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.s-welcome .hl{background:rgba(255,255,255,.16);color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.s-welcome .badge{padding:4px 9px}
+.welcome{font-size:var(--fs-2);font-weight:var(--fw-1);letter-spacing:.14em;text-transform:uppercase;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.7);}
+.logo{width:min(34vw,130px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.6))}
 .s-glance{background:radial-gradient(120% 70% at 50% 0%,#3a2d1e 0%,var(--char) 60%);color:var(--ivory)}
 .s-va{background:linear-gradient(180deg,#FBF4E8 0%,#F2E3C9 100%)}
 .s-vb1{background:linear-gradient(180deg,#F7F4EC 0%,#EEF1E8 100%)}
@@ -201,11 +204,10 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
 #r7:checked ~ .deck #p7,
 #r8:checked ~ .deck #p8,
 #r9:checked ~ .deck #p9,
-#r10:checked ~ .deck #p10,
-#r11:checked ~ .deck #p11{opacity:1;visibility:visible;z-index:2;transform:none;filter:none;-webkit-clip-path:inset(0 0 0 0);clip-path:inset(0 0 0 0);transition:opacity .8s ease,transform 1s cubic-bezier(.2,.7,.2,1),filter 1s ease,clip-path 1.1s cubic-bezier(.6,0,.2,1),-webkit-clip-path 1.1s cubic-bezier(.6,0,.2,1),visibility 0s}
-#r2:checked ~ .deck #p2{-webkit-clip-path:circle(150% at 50% 55%);clip-path:circle(150% at 50% 55%)}
-#r8:checked ~ .deck #p8{-webkit-clip-path:circle(160% at 50% 18%);clip-path:circle(160% at 50% 18%)}
-#r11:checked ~ .deck #p11{-webkit-clip-path:circle(150% at 50% 55%);clip-path:circle(150% at 50% 55%)}
+#r10:checked ~ .deck #p10{opacity:1;visibility:visible;z-index:2;transform:none;filter:none;-webkit-clip-path:inset(0 0 0 0);clip-path:inset(0 0 0 0);transition:opacity .8s ease,transform 1s cubic-bezier(.2,.7,.2,1),filter 1s ease,clip-path 1.1s cubic-bezier(.6,0,.2,1),-webkit-clip-path 1.1s cubic-bezier(.6,0,.2,1),visibility 0s}
+#r1:checked ~ .deck #p1{-webkit-clip-path:circle(150% at 50% 55%);clip-path:circle(150% at 50% 55%)}
+#r7:checked ~ .deck #p7{-webkit-clip-path:circle(160% at 50% 18%);clip-path:circle(160% at 50% 18%)}
+#r10:checked ~ .deck #p10{-webkit-clip-path:circle(150% at 50% 55%);clip-path:circle(150% at 50% 55%)}
 #r0:checked ~ .deck #p0 .rv,
 #r1:checked ~ .deck #p1 .rv,
 #r2:checked ~ .deck #p2 .rv,
@@ -216,8 +218,7 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
 #r7:checked ~ .deck #p7 .rv,
 #r8:checked ~ .deck #p8 .rv,
 #r9:checked ~ .deck #p9 .rv,
-#r10:checked ~ .deck #p10 .rv,
-#r11:checked ~ .deck #p11 .rv{opacity:1;transform:none}
+#r10:checked ~ .deck #p10 .rv{opacity:1;transform:none}
 #r0:checked ~ .deck #p0 .glow,
 #r1:checked ~ .deck #p1 .glow,
 #r2:checked ~ .deck #p2 .glow,
@@ -228,11 +229,10 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
 #r7:checked ~ .deck #p7 .glow,
 #r8:checked ~ .deck #p8 .glow,
 #r9:checked ~ .deck #p9 .glow,
-#r10:checked ~ .deck #p10 .glow,
-#r11:checked ~ .deck #p11 .glow{animation-play-state:running}
-#r0:checked ~ .deck .bars span:nth-child(1) i{animation:barfill 4.5s linear forwards}
+#r10:checked ~ .deck #p10 .glow{animation-play-state:running}
+#r0:checked ~ .deck .bars span:nth-child(1) i{animation:barfill 8s linear forwards}
 #r1:checked ~ .deck .bars span:nth-child(-n+1) i{width:100%}
-#r1:checked ~ .deck .bars span:nth-child(2) i{animation:barfill 5.5s linear forwards}
+#r1:checked ~ .deck .bars span:nth-child(2) i{animation:barfill 7s linear forwards}
 #r2:checked ~ .deck .bars span:nth-child(-n+2) i{width:100%}
 #r2:checked ~ .deck .bars span:nth-child(3) i{animation:barfill 7s linear forwards}
 #r3:checked ~ .deck .bars span:nth-child(-n+3) i{width:100%}
@@ -240,42 +240,32 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
 #r4:checked ~ .deck .bars span:nth-child(-n+4) i{width:100%}
 #r4:checked ~ .deck .bars span:nth-child(5) i{animation:barfill 7s linear forwards}
 #r5:checked ~ .deck .bars span:nth-child(-n+5) i{width:100%}
-#r5:checked ~ .deck .bars span:nth-child(6) i{animation:barfill 7s linear forwards}
+#r5:checked ~ .deck .bars span:nth-child(6) i{animation:barfill 6s linear forwards}
 #r6:checked ~ .deck .bars span:nth-child(-n+6) i{width:100%}
 #r6:checked ~ .deck .bars span:nth-child(7) i{animation:barfill 6s linear forwards}
 #r7:checked ~ .deck .bars span:nth-child(-n+7) i{width:100%}
-#r7:checked ~ .deck .bars span:nth-child(8) i{animation:barfill 6s linear forwards}
+#r7:checked ~ .deck .bars span:nth-child(8) i{animation:barfill 6.5s linear forwards}
 #r8:checked ~ .deck .bars span:nth-child(-n+8) i{width:100%}
-#r8:checked ~ .deck .bars span:nth-child(9) i{animation:barfill 6.5s linear forwards}
+#r8:checked ~ .deck .bars span:nth-child(9) i{animation:barfill 8s linear forwards}
 #r9:checked ~ .deck .bars span:nth-child(-n+9) i{width:100%}
-#r9:checked ~ .deck .bars span:nth-child(10) i{animation:barfill 8s linear forwards}
+#r9:checked ~ .deck .bars span:nth-child(10) i{animation:barfill 7s linear forwards}
 #r10:checked ~ .deck .bars span:nth-child(-n+10) i{width:100%}
-#r10:checked ~ .deck .bars span:nth-child(11) i{animation:barfill 7s linear forwards}
-#r11:checked ~ .deck .bars span:nth-child(-n+11) i{width:100%}
-#r11:checked ~ .deck .bars span:nth-child(-n+12) i{width:100%}
+#r10:checked ~ .deck .bars span:nth-child(-n+11) i{width:100%}
 @keyframes barfill{from{width:0}to{width:100%}}
-.deck.hold .bars span i,.deck.lbopen .bars span i,.deck.away .bars span i{animation-play-state:paused!important}
-@media(prefers-reduced-motion:reduce){#r0:checked ~ .deck .bars span:nth-child(-n+1) i{width:100%}#r1:checked ~ .deck .bars span:nth-child(-n+2) i{width:100%}#r2:checked ~ .deck .bars span:nth-child(-n+3) i{width:100%}#r3:checked ~ .deck .bars span:nth-child(-n+4) i{width:100%}#r4:checked ~ .deck .bars span:nth-child(-n+5) i{width:100%}#r5:checked ~ .deck .bars span:nth-child(-n+6) i{width:100%}#r6:checked ~ .deck .bars span:nth-child(-n+7) i{width:100%}#r7:checked ~ .deck .bars span:nth-child(-n+8) i{width:100%}#r8:checked ~ .deck .bars span:nth-child(-n+9) i{width:100%}#r9:checked ~ .deck .bars span:nth-child(-n+10) i{width:100%}#r10:checked ~ .deck .bars span:nth-child(-n+11) i{width:100%}#r11:checked ~ .deck .bars span:nth-child(-n+12) i{width:100%}}
+.deck.hold .bars span i,.deck.lbopen .bars span i,.deck.away .bars span i,.deck.hold .night,.deck.lbopen .night,.deck.away .night{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){#r0:checked ~ .deck .bars span:nth-child(-n+1) i{width:100%}#r1:checked ~ .deck .bars span:nth-child(-n+2) i{width:100%}#r2:checked ~ .deck .bars span:nth-child(-n+3) i{width:100%}#r3:checked ~ .deck .bars span:nth-child(-n+4) i{width:100%}#r4:checked ~ .deck .bars span:nth-child(-n+5) i{width:100%}#r5:checked ~ .deck .bars span:nth-child(-n+6) i{width:100%}#r6:checked ~ .deck .bars span:nth-child(-n+7) i{width:100%}#r7:checked ~ .deck .bars span:nth-child(-n+8) i{width:100%}#r8:checked ~ .deck .bars span:nth-child(-n+9) i{width:100%}#r9:checked ~ .deck .bars span:nth-child(-n+10) i{width:100%}#r10:checked ~ .deck .bars span:nth-child(-n+11) i{width:100%}}
 #r0:checked ~ .deck .bars span,
 #r1:checked ~ .deck .bars span,
-#r2:checked ~ .deck .bars span,
-#r5:checked ~ .deck .bars span,
-#r7:checked ~ .deck .bars span,
-#r9:checked ~ .deck .bars span,
-#r11:checked ~ .deck .bars span{background:rgba(250,247,242,.25)}
+#r4:checked ~ .deck .bars span,
+#r6:checked ~ .deck .bars span,
+#r8:checked ~ .deck .bars span,
+#r10:checked ~ .deck .bars span{background:rgba(250,247,242,.25)}
 #r0:checked ~ .deck .bars span i,
 #r1:checked ~ .deck .bars span i,
-#r2:checked ~ .deck .bars span i,
-#r5:checked ~ .deck .bars span i,
-#r7:checked ~ .deck .bars span i,
-#r9:checked ~ .deck .bars span i,
-#r11:checked ~ .deck .bars span i{background:var(--ivory)}
-#r0:checked ~ .deck #p0,
-#r1:checked ~ .deck #p1{transition:opacity 2s ease,transform 1s cubic-bezier(.2,.7,.2,1),filter 1s ease,visibility 0s}
-
-/* night -> day: the outgoing photo stays solid until the other one has fully faded in, so the two never leave a dark dip */
-#p0,#p1{transition:opacity .2s linear 2.1s,visibility 0s linear 2.3s,transform 1s cubic-bezier(.2,.7,.2,1),filter 1s ease}
-.s-cover .rv{transition-delay:1.1s}.s-cover .rv.d1{transition-delay:1.3s}.s-cover .rv.d2{transition-delay:1.5s}.s-cover .rv.d3{transition-delay:1.7s}
+#r4:checked ~ .deck .bars span i,
+#r6:checked ~ .deck .bars span i,
+#r8:checked ~ .deck .bars span i,
+#r10:checked ~ .deck .bars span i{background:var(--ivory)}
 </style>
 </head>
 <body>
@@ -290,27 +280,23 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
 <input class="pg" type="radio" name="pg" id="r8" aria-label="Slide 9">
 <input class="pg" type="radio" name="pg" id="r9" aria-label="Slide 10">
 <input class="pg" type="radio" name="pg" id="r10" aria-label="Slide 11">
-<input class="pg" type="radio" name="pg" id="r11" aria-label="Slide 12">
 <main class="deck away" id="deck" aria-label="YLS Dreams – Premium Villas and Residential Plots in Jhansi">
-  <div class="bars" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
+  <div class="bars" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
   <button class="snd paused" id="snd" type="button" aria-label="Play music" aria-pressed="false"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.6" height="12" rx="1"/><rect x="8.4" y="1" width="3.6" height="12" rx="1"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.2v11.6L12.6 7z"/></svg></button>
   <audio id="bgm" loop preload="none" playsinline src="https://raw.githubusercontent.com/pariflex1/yls-lead/refs/heads/main/sound.mp3"></audio>
   <section id="p0" class="scene s-welcome fx-fade dark" data-i="0">
-    <img class="bg" src="https://raw.githubusercontent.com/pariflex1/yls-lead/refs/heads/main/images/yls-night.webp" alt="YLS Dreams villa at night">
-    <p class="welcome rv d1">Welcome to</p>
-    <img class="logo rv d2" src="https://raw.githubusercontent.com/pariflex1/yls-lead/refs/heads/main/images/Logo.webp" alt="YLS Dreams – Your Living Space">
+    <img class="bg day" src="https://raw.githubusercontent.com/pariflex1/yls-lead/refs/heads/main/images/yls.webp" alt="YLS Dreams premium villas, day view">
+    <img class="bg night" src="https://raw.githubusercontent.com/pariflex1/yls-lead/refs/heads/main/images/yls-night.webp" alt="YLS Dreams villas, night view">
+    <div class="wtop"><p class="welcome rv">Welcome to</p><img class="logo rv d1" src="https://raw.githubusercontent.com/pariflex1/yls-lead/refs/heads/main/images/Logo.webp" alt="YLS Dreams – Your Living Space"></div>
+    <div class="wbot">
+      <div class="badges rv d2"><span class="badge">✓ JDA APPROVED</span><span class="badge">✓ RERA REGISTERED</span></div>
+      <h1 class="rv d3">Premium Villas &amp; Residential Plots in Jhansi</h1>
+      <p class="hl rv d4">5.3+ Acres · 65 Premium Villas · Gated Community</p>
+    </div>
     <label class="tap back" for="r0" aria-hidden="true"></label><label class="tap fwd" for="r1" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn ghost" for="r0" aria-label="Previous slide">‹</label><span class="hint">Tap to begin</span><label class="navbtn next" for="r1" aria-label="Next slide">›</label></div>
+    <div class="navrow"><label class="navbtn ghost" for="r0" aria-label="Previous slide">‹</label><span class="hint">Tap or swipe to explore</span><label class="navbtn next" for="r1" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p1" class="scene s-cover fx-fade dark" data-i="1">
-    <img class="bg" data-src="https://raw.githubusercontent.com/pariflex1/yls-lead/refs/heads/main/images/yls.webp" alt="YLS Dreams premium villa community">
-    <div class="badges rv"><span class="badge">✓ JDA APPROVED</span><span class="badge">✓ RERA REGISTERED</span></div>
-    <h1 class="rv d1">Premium Villas &amp; Residential Plots in Jhansi</h1>
-    <p class="hl rv d2">5.3+ Acres · 65 Premium Villas · Gated Community</p>
-    <label class="tap back" for="r0" aria-hidden="true"></label><label class="tap fwd" for="r2" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r0" aria-label="Previous slide">‹</label><span class="hint">Tap or swipe to explore</span><label class="navbtn next" for="r2" aria-label="Next slide">›</label></div>
-  </section>
-  <section id="p2" class="scene s-glance fx-circle dark" data-i="2">
+  <section id="p1" class="scene s-glance fx-circle dark" data-i="1">
     <div class="glow" style="width:260px;height:260px;background:#8E6A24;top:-80px;left:-80px;opacity:0.45"></div>
     <div class="glow" style="width:220px;height:220px;background:#3E5E52;bottom:-60px;right:-60px;opacity:0.4"></div>
     <div class="label rv">At a glance</div>
@@ -322,40 +308,40 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
       <div class="stat"><b>3 &amp; 4</b><span>BHK Configurations</span></div>
       <div class="stat"><b>JDA</b><span>Approved Project</span></div>
     </div>
-    <label class="tap back" for="r1" aria-hidden="true"></label><label class="tap fwd" for="r3" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r1" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r3" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r0" aria-hidden="true"></label><label class="tap fwd" for="r2" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r0" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r2" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p3" class="scene s-va fx-rise" data-i="3">
+  <section id="p2" class="scene s-va fx-rise" data-i="2">
     <div class="glow" style="width:240px;height:240px;background:#EDB98A;top:-80px;right:-90px;opacity:0.4"></div>
     <span class="badge rv">VILLA A</span>
     <h2 class="rv d1">Premium 4 Bedroom Duplex Villa</h2>
     <p class="sub rv d1">4 Bedrooms + Study + Servant Room</p>
     <div class="plan-box rv d2"><img class="plan zoomable" data-src="https://github.com/pariflex1/yls-lead/blob/main/images/villa-A.webp?raw=true" alt="Villa A floor plan – 4 bedrooms, study and servant room"></div>
     <ul class="specs rv d3"><li><span>Typical plot area</span><b>1936 sq.ft.</b></li><li><span>Total saleable area</span><b>3170 sq.ft.</b></li><li class="pr"><span>Basic price</span><b>₹98.95 Lakh*</b></li></ul>
-    <label class="tap back" for="r2" aria-hidden="true"></label><label class="tap fwd" for="r4" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r2" aria-label="Previous slide">‹</label><span class="hint">Tap the plan to zoom</span><label class="navbtn next" for="r4" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r1" aria-hidden="true"></label><label class="tap fwd" for="r3" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r1" aria-label="Previous slide">‹</label><span class="hint">Tap the plan to zoom</span><label class="navbtn next" for="r3" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p4" class="scene s-vb1 fx-curtain" data-i="4">
+  <section id="p3" class="scene s-vb1 fx-curtain" data-i="3">
     <div class="glow" style="width:240px;height:240px;background:#B9D1BD;bottom:-80px;left:-90px;opacity:0.45"></div>
     <span class="badge rv">VILLA B · OPTION 1</span>
     <h2 class="rv d1">4 Bedrooms + Study</h2>
     <p class="sub hide-short rv d1">Two layout options on a typical plot area of 1723 sq.ft.</p>
     <div class="plan-box rv d2"><img class="plan zoomable" data-src="https://github.com/pariflex1/yls-lead/blob/main/images/villa-B%20%28option-1%29.webp?raw=true" alt="Villa B option 1 floor plan – 4 bedrooms and study"></div>
     <ul class="specs rv d3"><li><span>Typical plot area</span><b>1723 sq.ft.</b></li><li><span>Total saleable area</span><b>2720 sq.ft.</b></li><li class="pr"><span>Basic price</span><b>₹88.37 Lakh*</b></li></ul>
-    <label class="tap back" for="r3" aria-hidden="true"></label><label class="tap fwd" for="r5" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r3" aria-label="Previous slide">‹</label><span class="hint">Tap the plan to zoom</span><label class="navbtn next" for="r5" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r2" aria-hidden="true"></label><label class="tap fwd" for="r4" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r2" aria-label="Previous slide">‹</label><span class="hint">Tap the plan to zoom</span><label class="navbtn next" for="r4" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p5" class="scene s-vb2 fx-slide dark" data-i="5">
+  <section id="p4" class="scene s-vb2 fx-slide dark" data-i="4">
     <div class="glow" style="width:240px;height:240px;background:#3E5E52;top:-70px;left:-80px;opacity:0.55"></div>
     <span class="badge rv">VILLA B · OPTION 2</span>
     <h2 class="rv d1">3 Bedrooms (Expandable to 4 BHK)</h2>
     <p class="sub hide-short rv d1">Two layout options on a typical plot area of 1723 sq.ft.</p>
     <div class="plan-box rv d2"><img class="plan zoomable" data-src="https://github.com/pariflex1/yls-lead/blob/main/images/villa-B%20%28option-2%29.webp?raw=true" alt="Villa B option 2 floor plan – 3 bedrooms, expandable to 4 BHK"></div>
     <ul class="specs rv d3"><li><span>Typical plot area</span><b>1723 sq.ft.</b></li><li><span>Total saleable area</span><b>2330 sq.ft.</b></li><li class="pr"><span>Basic price</span><b>₹82.52 Lakh*</b></li></ul>
-    <label class="tap back" for="r4" aria-hidden="true"></label><label class="tap fwd" for="r6" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r4" aria-label="Previous slide">‹</label><span class="hint">Tap the plan to zoom</span><label class="navbtn next" for="r6" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r3" aria-hidden="true"></label><label class="tap fwd" for="r5" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r3" aria-label="Previous slide">‹</label><span class="hint">Tap the plan to zoom</span><label class="navbtn next" for="r5" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p6" class="scene s-plots fx-zoom" data-i="6">
+  <section id="p5" class="scene s-plots fx-zoom" data-i="5">
     <div class="glow" style="width:260px;height:260px;background:#F1C98A;top:-80px;right:-90px;opacity:0.4"></div>
     <span class="badge rv">RESIDENTIAL PLOTS</span>
     <h2 class="rv d1">Premium Residential Plots</h2>
@@ -363,10 +349,10 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
     <div class="rv d2"><div class="price">₹47.38 Lakh*</div><p class="cap">Starting basic price · Plot B</p></div>
     <ul class="specs rv d3"><li><span>Plot A basic price</span><b>₹53.24 Lakh*</b></li><li><span>Plot B basic price</span><b>₹47.38 Lakh*</b></li><li><span>Development</span><b>Gated community</b></li></ul>
     <p class="sub rv d4">*Indicative basic prices. Taxes, registration and other charges extra.</p>
-    <label class="tap back" for="r5" aria-hidden="true"></label><label class="tap fwd" for="r7" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r5" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r7" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r4" aria-hidden="true"></label><label class="tap fwd" for="r6" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r4" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r6" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p7" class="scene s-amen fx-flip dark" data-i="7">
+  <section id="p6" class="scene s-amen fx-flip dark" data-i="6">
     <div class="glow" style="width:250px;height:250px;background:#8E6A24;bottom:-70px;right:-80px;opacity:0.4"></div>
     <div class="label rv">Lifestyle</div>
     <h2 class="rv d1">Community Amenities</h2>
@@ -381,39 +367,39 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
       <div class="am"><span class="ico">🛕</span><div><b>Temple</b><small>Dedicated prayer space</small></div></div>
       <div class="am"><span class="ico">🛝</span><div><b>Children’s Play Area</b><small>Family-friendly spaces</small></div></div>
     </div>
-    <label class="tap back" for="r6" aria-hidden="true"></label><label class="tap fwd" for="r8" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r6" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r8" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r5" aria-hidden="true"></label><label class="tap fwd" for="r7" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r5" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r7" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p8" class="scene s-layout fx-iris" data-i="8">
+  <section id="p7" class="scene s-layout fx-iris" data-i="7">
     <div class="glow" style="width:240px;height:240px;background:#E9CF9B;top:-80px;left:-90px;opacity:0.4"></div>
     <div class="label rv">Project layout</div>
     <h2 class="rv d1">Designed Around Better Living</h2>
     <div class="plan-box rv d2"><img class="plan zoomable" data-src="https://github.com/pariflex1/yls-lead/blob/main/images/layout.webp?raw=true" alt="YLS Dreams project layout plan"></div>
     <p class="cap rv d3">Project layout plan.</p>
-    <label class="tap back" for="r7" aria-hidden="true"></label><label class="tap fwd" for="r9" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r7" aria-label="Previous slide">‹</label><span class="hint">Tap the layout to zoom</span><label class="navbtn next" for="r9" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r6" aria-hidden="true"></label><label class="tap fwd" for="r8" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r6" aria-label="Previous slide">‹</label><span class="hint">Tap the layout to zoom</span><label class="navbtn next" for="r8" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p9" class="scene s-loc fx-rise dark" data-i="9">
+  <section id="p8" class="scene s-loc fx-rise dark" data-i="8">
     <div class="glow" style="width:240px;height:240px;background:#3b6f8f;top:-80px;right:-90px;opacity:0.35"></div>
     <div class="label rv">Location advantage</div>
     <h2 class="rv d1">Bhojla, Jhansi</h2>
     <p class="sub hide-short rv d1">YLS Dreams is located at Bhojla, Jhansi, with access to the city’s key roads and everyday destinations.</p>
     <div class="addr rv d2">📍 Bhojla, Unnao Balaji Road, Jhansi, Uttar Pradesh</div>
     <div class="mapbox rv d3"><iframe title="YLS Dreams location map" src="about:blank" data-src="https://www.google.com/maps?q=YLS%20Dreams%20Bhojla%20Jhansi&output=embed" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-    <label class="tap back" for="r8" aria-hidden="true"></label><label class="tap fwd" for="r10" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r8" aria-label="Previous slide">‹</label><span class="hint">Drag the map to explore</span><label class="navbtn next" for="r10" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r7" aria-hidden="true"></label><label class="tap fwd" for="r9" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r7" aria-label="Previous slide">‹</label><span class="hint">Drag the map to explore</span><label class="navbtn next" for="r9" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p10" class="scene s-cred fx-curtain" data-i="10">
+  <section id="p9" class="scene s-cred fx-curtain" data-i="9">
     <div class="glow" style="width:240px;height:240px;background:#E9CF9B;bottom:-70px;right:-80px;opacity:0.45"></div>
     <div class="label rv">Project credentials</div>
     <h2 class="rv d1">Registered &amp; Approved</h2>
     <p class="sub rv d1">Review project registration details and request supporting documents from the authorised sales team.</p>
     <ul class="specs rv d2"><li><span>Project</span><b>YLS Dreams</b></li><li><span>RERA Registration</span><b>UPRERAPRJ719002</b></li><li><span>Approval</span><b>JDA Approved</b></li><li><span>Location</span><b>Bhojla, Jhansi</b></li></ul>
     <a class="tlink rv d3" href="https://www.up-rera.in/" target="_blank" rel="noopener">Verify on the official UP-RERA website</a>
-    <label class="tap back" for="r9" aria-hidden="true"></label><label class="tap fwd" for="r11" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r9" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r11" aria-label="Next slide">›</label></div>
+    <label class="tap back" for="r8" aria-hidden="true"></label><label class="tap fwd" for="r10" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r8" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r10" aria-label="Next slide">›</label></div>
   </section>
-  <section id="p11" class="scene s-close fx-circle dark" data-i="11">
+  <section id="p10" class="scene s-close fx-circle dark" data-i="10">
     <div class="glow" style="width:300px;height:300px;background:#8E6A24;top:-100px;left:-100px;opacity:0.5"></div>
     <div class="glow" style="width:260px;height:260px;background:#3E5E52;bottom:-80px;right:-80px;opacity:0.4"></div>
     <div class="label rv">YLS Dreams</div>
@@ -425,8 +411,8 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
     </div>
     <div class="rv d3"><p class="fine">Bhojla, Jhansi · RERA: UPRERAPRJ719002</p><p class="fine">© <span id="year"></span> YLS Dreams. All rights reserved.</p></div>
     <p class="fine rv d4">*Prices are indicative basic prices. Taxes, registration, additional charges and availability are subject to confirmation by the authorised sales team.</p>
-    <label class="tap back" for="r10" aria-hidden="true"></label>
-    <div class="navrow"><label class="navbtn" for="r10" aria-label="Previous slide">‹</label><label class="again" for="r0">↺ Start again</label><span class="navbtn ghost" aria-hidden="true"></span></div>
+    <label class="tap back" for="r9" aria-hidden="true"></label>
+    <div class="navrow"><label class="navbtn" for="r9" aria-label="Previous slide">‹</label><label class="again" for="r0">↺ Start again</label><span class="navbtn ghost" aria-hidden="true"></span></div>
   </section>
 </main>
 
@@ -500,9 +486,11 @@ button:focus-visible,a:focus-visible,label:focus-visible{outline:2px solid var(-
     deck.addEventListener('mousedown', hold);
     document.addEventListener('mouseup', release);
     /* wait for the first photo before the clock starts */
-    var first = deck.querySelector('#p0 .bg'), started = false;
+    var imgs = Array.prototype.slice.call(deck.querySelectorAll('#p0 .bg')), started = false, left = 0;
     function begin() { if (started) return; started = true; deck.classList.remove('away'); }
-    if (first && !first.complete) { first.addEventListener('load', begin); first.addEventListener('error', begin); setTimeout(begin, 4000); } else begin();
+    function one() { left--; if (left <= 0) begin(); }
+    imgs.forEach(function (im) { if (!im.complete) { left++; im.addEventListener('load', one); im.addEventListener('error', one); } });
+    if (left === 0) begin(); else setTimeout(begin, 4000);
     /* pause while the tab is hidden or the visitor is using the map */
     document.addEventListener('visibilitychange', function () { if (document.hidden) deck.classList.add('away'); else deck.classList.remove('away'); });
     window.addEventListener('blur', function () { setTimeout(function () { if (document.activeElement && document.activeElement.tagName === 'IFRAME') deck.classList.add('away'); }, 0); });
