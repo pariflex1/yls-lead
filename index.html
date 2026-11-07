@@ -572,19 +572,12 @@ strong {
 .mapbox {
     position: relative;
     flex: 1 1 0;
-    min-height: 120px;
+    min-height: 160px;
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid rgba(250, 247, 242, .2);
-    background: #021525;
-    pointer-events: auto;
-    cursor: grab;
-    touch-action: none
-}
-
-.mapbox.dragging {
-    cursor: grabbing
+    background: #021525
 }
 
 .mapbox iframe {
@@ -592,128 +585,6 @@ strong {
     height: 100%;
     border: 0;
     display: block
-}
-
-/* animated static location map (map.svg) */
-.mapwrap {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    border-radius: inherit
-}
-
-.map-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: none;
-    transform: translate(0, 0) scale(1);
-    transform-origin: 0 0;
-    will-change: transform;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: none
-}
-
-.map-pin {
-    position: absolute;
-    left: 50%;
-    top: 44%;
-    width: 14px;
-    height: 14px;
-    margin: -7px 0 0 -7px;
-    border-radius: 50%;
-    background: var(--gold-l);
-    box-shadow: 0 0 0 3px rgba(224, 188, 122, .3);
-    pointer-events: none
-}
-
-.map-pin::before,
-.map-pin::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 2px solid rgba(224, 188, 122, .85);
-    animation: pinPulse 2.6s ease-out infinite
-}
-
-.map-pin::after {
-    animation-delay: 1.3s
-}
-
-@keyframes pinPulse {
-    0% {
-        transform: scale(1);
-        opacity: .85
-    }
-
-    100% {
-        transform: scale(5);
-        opacity: 0
-    }
-}
-
-.map-tag {
-    position: absolute;
-    left: 50%;
-    top: 44%;
-    transform: translate(-50%, -34px);
-    padding: 4px 11px;
-    border-radius: 20px;
-    background: rgba(21, 17, 14, .72);
-    border: 1px solid rgba(224, 188, 122, .55);
-    color: var(--ivory);
-    font-size: 13px;
-    font-weight: var(--fw-2);
-    white-space: nowrap;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    pointer-events: none
-}
-
-.map-ctrl {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    z-index: 21;
-    display: flex;
-    flex-direction: column;
-    gap: 8px
-}
-
-.map-ctrl button {
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    border-radius: 50%;
-    border: 1px solid rgba(224, 188, 122, .6);
-    background: rgba(21, 17, 14, .68);
-    color: var(--ivory);
-    font-size: 22px;
-    line-height: 1;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    pointer-events: auto;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px)
-}
-
-.map-ctrl button:hover {
-    background: rgba(142, 106, 36, .85)
-}
-
-.map-ctrl button:active {
-    transform: scale(.94)
-}
-
-#r8:checked~.deck.mapstop .bars span i {
-    animation-play-state: paused !important
 }
 
 .tlink {
@@ -1386,7 +1257,7 @@ Jhansi,
 with access to the city’s key roads and everyday destinations.</p><div class="addr rv d2">📍 Bhojla,
 Unnao Balaji Road,
 Jhansi,
-Uttar Pradesh</div><div class="mapbox rv d3"><div class="mapwrap"><img class="map-img" data-src="https://raw.githubusercontent.com/pariflex1/yls-lead/94adcf7e8fa1e3ce536ad98db804daf72dfa5106/images/map.svg" alt="Animated map showing YLS Dreams at Bhojla, Jhansi"><span class="map-pin" aria-hidden="true"></span><span class="map-tag">YLS Dreams · Bhojla</span><div class="map-ctrl"><button class="map-zoom in" type="button" aria-label="Zoom in">+</button><button class="map-zoom out" type="button" aria-label="Zoom out">−</button></div></div></div><label class="tap back" for="r7" aria-hidden="true"></label><label class="tap fwd" for="r9" aria-hidden="true"></label><div class="navrow"><label class="navbtn" for="r7" aria-label="Previous slide">‹</label><span class="hint">Drag the map to explore</span><label class="navbtn next" for="r9" aria-label="Next slide">›</label></div></section><section id="p9" class="scene s-cred fx-curtain" data-i="9"><div class="glow" style="width:240px;height:240px;background:#E9CF9B;bottom:-70px;right:-80px;opacity:0.45"></div><div class="label rv">Project credentials</div><h2 class="rv d1">Registered &amp;
+Uttar Pradesh</div><div class="mapbox rv d3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4468.016694274277!2d78.5786567!3d25.516105600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397775e5d805dc69%3A0x3a8f6856c21050cd!2sYLS%20Dreams!5e1!3m2!1sen!2sin!4v1794038773333!5m2!1sen!2sin" title="YLS Dreams location on Google Maps" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><label class="tap back" for="r7" aria-hidden="true"></label><label class="tap fwd" for="r9" aria-hidden="true"></label><div class="navrow"><label class="navbtn" for="r7" aria-label="Previous slide">‹</label><span class="hint">Tap the map to explore</span><label class="navbtn next" for="r9" aria-label="Next slide">›</label></div></section><section id="p9" class="scene s-cred fx-curtain" data-i="9"><div class="glow" style="width:240px;height:240px;background:#E9CF9B;bottom:-70px;right:-80px;opacity:0.45"></div><div class="label rv">Project credentials</div><h2 class="rv d1">Registered &amp;
 
 Approved</h2><p class="sub rv d1">Review project registration details and request supporting documents from the authorised sales team.</p><ul class="specs rv d2"><li><span>Project</span><b>YLS Dreams</b></li><li><span>RERA Registration</span><b>UPRERAPRJ719002</b></li><li><span>Approval</span><b>JDA Approved</b></li><li><span>Location</span><b>Bhojla,
 Jhansi</b></li></ul><a class="tlink rv d3" href="https://www.up-rera.in/" target="_blank" rel="noopener">Verify on the official UP-RERA website</a><label class="tap back" for="r8" aria-hidden="true"></label><label class="tap fwd" for="r10" aria-hidden="true"></label><div class="navrow"><label class="navbtn" for="r8" aria-label="Previous slide">‹</label><span class="hint">Tap anywhere</span><label class="navbtn next" for="r10" aria-label="Next slide">›</label></div></section><section id="p10" class="scene s-close fx-circle dark" data-i="10"><div class="glow" style="width:300px;height:300px;background:#8E6A24;top:-100px;left:-100px;opacity:0.5"></div><div class="glow" style="width:260px;height:260px;background:#3E5E52;bottom:-80px;right:-80px;opacity:0.4"></div><div class="label rv">YLS Dreams</div><h2 class="rv d1">Get More Details</h2><p class="sub rv d1">Chat or call our property consultant for prices,
@@ -1712,163 +1583,6 @@ safe(function () {
 });
 
 
-safe(function () {
-    var map = document.querySelector('#p8 .mapbox');
-    if (!map) return;
-    var img = map.querySelector('.map-img');
-    var deck = document.getElementById('deck');
-    var pointers = {};
-    var drag = null, pinch = null;
-    var zoom = 1, tx = 0, ty = 0;
-    var ready = false;
-
-    function markInteract() {
-        if (deck) deck.classList.add('mapstop');
-    }
-
-    function clampZoom(z) { return z < 1 ? 1 : (z > 4 ? 4 : z); }
-
-    function apply() {
-        var cw = map.clientWidth, ch = map.clientHeight;
-        var iw = img.offsetWidth, ih = img.offsetHeight;
-        var sw = iw * zoom, sh = ih * zoom;
-        tx = Math.min(0, Math.max(cw - sw, tx));
-        ty = Math.min(0, Math.max(ch - sh, ty));
-        img.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + zoom + ')';
-    }
-
-    function reset() {
-        zoom = 1;
-        tx = 0;
-        ty = (map.clientHeight - img.offsetHeight) * 0.26;
-        apply();
-        ready = true;
-    }
-
-    function zoomAt(z, cx, cy) {
-        z = clampZoom(z);
-        var ratio = z / zoom;
-        tx = cx - (cx - tx) * ratio;
-        ty = cy - (cy - ty) * ratio;
-        zoom = z;
-        apply();
-    }
-
-    function freeze() {
-        if (img.style.animation !== 'none') img.style.animation = 'none';
-    }
-
-    function start(e) {
-        if (!ready) return;
-        if (e.target.closest && e.target.closest('.map-ctrl')) return;
-        markInteract();
-        freeze();
-        pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
-        var ids = Object.keys(pointers);
-
-        if (map.setPointerCapture) {
-            try { map.setPointerCapture(e.pointerId); } catch (err) {}
-        }
-
-        if (ids.length === 1) {
-            drag = { x: e.clientX, y: e.clientY, tx: tx, ty: ty };
-            map.classList.add('dragging');
-            if (deck) deck.classList.add('hold');
-        } else if (ids.length === 2) {
-            drag = null;
-            map.classList.remove('dragging');
-            var a = pointers[ids[0]], b = pointers[ids[1]];
-            var r = map.getBoundingClientRect();
-            pinch = {
-                dist: Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)) || 1,
-                zoom: zoom,
-                cx: (a.x + b.x) / 2 - r.left,
-                cy: (a.y + b.y) / 2 - r.top,
-                tx: tx,
-                ty: ty
-            };
-        }
-    }
-
-    function move(e) {
-        if (!pointers[e.pointerId]) return;
-        pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
-        if (e.cancelable) e.preventDefault();
-
-        var ids = Object.keys(pointers);
-
-        if (ids.length >= 2 && pinch) {
-            var a = pointers[ids[0]], b = pointers[ids[1]];
-            var dx = a.x - b.x, dy = a.y - b.y;
-            var dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            var z = clampZoom(pinch.zoom * (dist / pinch.dist));
-            var ratio = z / pinch.zoom;
-            var r = map.getBoundingClientRect();
-            var cx = (a.x + b.x) / 2 - r.left;
-            var cy = (a.y + b.y) / 2 - r.top;
-            tx = cx - (pinch.cx - pinch.tx) * ratio;
-            ty = cy - (pinch.cy - pinch.ty) * ratio;
-            zoom = z;
-            apply();
-        } else if (drag) {
-            tx = drag.tx + (e.clientX - drag.x);
-            ty = drag.ty + (e.clientY - drag.y);
-            apply();
-        }
-    }
-
-    function end(e) {
-        if (e && e.pointerId !== undefined) delete pointers[e.pointerId];
-        var ids = Object.keys(pointers);
-        if (ids.length === 1) {
-            var p = pointers[ids[0]];
-            drag = { x: p.x, y: p.y, tx: tx, ty: ty };
-            pinch = null;
-            map.classList.add('dragging');
-        } else if (ids.length === 0) {
-            drag = null;
-            pinch = null;
-            map.classList.remove('dragging');
-            if (deck) deck.classList.remove('hold');
-        }
-    }
-
-    function zoomBy(factor) {
-        if (!ready) return;
-        markInteract();
-        freeze();
-        zoomAt(zoom * factor, map.clientWidth / 2, map.clientHeight / 2);
-    }
-
-    map.addEventListener('pointerdown', start);
-    map.addEventListener('pointermove', move);
-    map.addEventListener('pointerup', end);
-    map.addEventListener('pointercancel', end);
-    map.addEventListener('pointerleave', end);
-
-    var zin = map.querySelector('.map-zoom.in');
-    var zout = map.querySelector('.map-zoom.out');
-    if (zin) zin.addEventListener('click', function (e) { e.stopPropagation(); zoomBy(1.5); });
-    if (zout) zout.addEventListener('click', function (e) { e.stopPropagation(); zoomBy(1 / 1.5); });
-
-    img.addEventListener('load', function () { reset(); });
-    if (img.complete && img.naturalWidth) { reset(); }
-
-    window.addEventListener('resize', function () { if (ready) apply(); });
-
-    map.addEventListener('wheel', function (e) {
-        if (!ready) return;
-        e.preventDefault();
-        markInteract();
-        freeze();
-        var r = map.getBoundingClientRect();
-        zoomAt(zoom * (e.deltaY < 0 ? 1.12 : 1 / 1.12), e.clientX - r.left, e.clientY - r.top);
-    }, { passive: false });
-
-    ['touchstart', 'touchmove', 'touchend'].forEach(function (t) {
-        map.addEventListener(t, function (e) { e.stopPropagation(); }, { passive: true });
-    });
-});
 
 
 
